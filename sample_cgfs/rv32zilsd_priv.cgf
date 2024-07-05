@@ -8,7 +8,7 @@ misalign-sd:
   rs1: 
     <<: *all_regs_mx0
   rs2: 
-    <<: *pair_regs
+    <<: *pair_regs_zilsd
   val_comb:
     'ea_align == 1': 0
     'ea_align == 2': 0
@@ -28,7 +28,7 @@ misalign-ld:
   rs1: 
     <<: *all_regs_mx0
   rd: 
-    <<: *pair_regs
+    <<: *pair_regs_zilsd
   val_comb:
     'ea_align == 1': 0
     'ea_align == 2': 0

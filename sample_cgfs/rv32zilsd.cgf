@@ -8,7 +8,7 @@ ld:
     rs1: 
       <<: *all_regs_mx0
     rd: 
-      <<: *pair_regs
+      <<: *pair_regs_zilsd
     op_comb: 
       <<: *ifmt_op_comb
     val_comb:
@@ -33,7 +33,7 @@ sd:
     rs1: 
       <<: *all_regs_mx0
     rs2: 
-      <<: *pair_regs
+      <<: *pair_regs_zilsd
     op_comb: 
         'rs1 != rs2': 0
     val_comb:
@@ -75,7 +75,7 @@ csdsp:
     opcode: 
       c.sdspz: 0
     rs2: 
-      <<: *pair_regs
+      <<: *pair_regs_zilsd
     val_comb:
         'imm_val > 0': 0
         'imm_val == 0': 0
