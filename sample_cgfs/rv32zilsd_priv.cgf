@@ -1,14 +1,14 @@
 misalign-sd:
   config:
     - check ISA:=regex(.*I.*Zilsd.*); check hw_data_misaligned_support:=True
-    - check ISA:=regex(.*I.*Zicsr.*); check hw_data_misaligned_support:=False; def rvtest_mtrap_routine=True
+    - check ISA:=regex(.*I.*Zicsr.*Zilsd.); check hw_data_misaligned_support:=False; def rvtest_mtrap_routine=True
   cond: check ISA:=regex(.*32.*I.*Zicsr.*)
   mnemonics:
     sdz: 0
   rs1: 
     <<: *all_regs_mx0
   rs2: 
-    <<: *pair_regs
+    <<: *pair_regs_zilsd
   val_comb:
     'ea_align == 1': 0
     'ea_align == 2': 0
@@ -21,14 +21,14 @@ misalign-sd:
 misalign-ld:
   config:
     - check ISA:=regex(.*I.*Zilsd.*); check hw_data_misaligned_support:=True
-    - check ISA:=regex(.*I.*Zicsr.*); check hw_data_misaligned_support:=False; def rvtest_mtrap_routine=True
-  cond: check ISA:=regex(.*32.*I.*)
+    - check ISA:=regex(.*I.*Zicsr.*Zilsd.); check hw_data_misaligned_support:=False; def rvtest_mtrap_routine=True
+  cond: check ISA:=regex(.*32.*I.*Zicsr.*)
   mnemonics:
     ldz: 0
   rs1: 
     <<: *all_regs_mx0
   rd: 
-    <<: *pair_regs
+    <<: *pair_regs_zilsd
   val_comb:
     'ea_align == 1': 0
     'ea_align == 2': 0

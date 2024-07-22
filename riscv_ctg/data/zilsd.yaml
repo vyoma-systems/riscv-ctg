@@ -4,7 +4,7 @@ ldz:
     stride: 2
     sz: 'XLEN/8'
   rs1_op_data: *all_regs_mx0
-  rd_op_data: *pair_regs
+  rd_op_data: *pair_regs_zilsd
   rd_hi: 0
   isa: 
     - IZilsd
@@ -26,7 +26,7 @@ sdz:
     stride: 2
     sz: 'XLEN/8'
   rs1_op_data: *all_regs_mx0
-  rs2_op_data: *pair_regs
+  rs2_op_data: *pair_regs_zilsd
   rd_op_data: *all_regs
   rs2_hi: 0
   xlen: [32]
@@ -70,7 +70,7 @@ c.ldspz:
   sig:
     stride: 2
     sz: 'XLEN/8'
-  rd_op_data: *pair_regs_zilsd
+  rd_op_data: *pair_regs_zcmlsd
   rd_hi: 0
   xlen: [32]
   std_op:
